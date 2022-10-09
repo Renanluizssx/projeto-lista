@@ -1,0 +1,113 @@
+* {
+    box-sizing:border-box;
+    margin:0px;
+    padding:0px;
+}
+body {
+    background-color:black;
+}
+div.conteudo {
+    width:100%;
+}
+div#checkboxes {
+   width:25%;
+   margin: 0 auto;
+   display:flex;
+   flex-direction:row;
+   position:relative;
+   
+    
+}
+form {
+    width:100%;
+    height:100%;
+}
+div#quantidade {
+    width:100%;
+    color:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    
+    
+}
+div#quantidades {
+    width:10%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:rgba(255, 244, 244, 0.528);
+    border-radius:5px;
+}
+input#checkbox {
+    position:absolute;
+    display:flex;
+    align-items:center;
+    top:16px;
+    left:0px;   
+    
+}
+
+input#nome {
+    width:100%;
+    height:50px;
+    background-color:rgba(255, 244, 244, 0.528);
+    border:none;
+    padding-left:25px;
+    border-radius:10px;
+    font-size:15px;
+}
+div#tarefas {
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:20px;
+    height:100%;
+    flex-direction:column;
+    
+}
+div.minhastarefas {
+    background-color: rgba(255, 244, 244, 0.528);
+    width:25%;
+    height:52px;
+    display:flex;
+    justify-content:left;
+    align-items:center;
+    border-radius:10px;
+    margin:5px;
+    position:relative;
+
+}
+div.minhastarefasv {
+    background-color:red;
+}
+span {
+    margin-left:25px;
+}
+input.checkboxr {
+    position:absolute;
+    top:16px;
+    left:0px;
+}
+div#botao {
+    margin: auto;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:10px;
+}
+button {
+    height:40px;
+    width:10%;
+    background-color:brown;
+    border:none;
+    border-radius:10px;
+}
+label::before {
+    background-color:red;
+}
+input.checkboxr:checked label::before {
+    background-color:red;
+}
