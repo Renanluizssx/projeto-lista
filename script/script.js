@@ -23,12 +23,18 @@
   let nome = document.getElementById('nome');
   let checkbox = document.getElementById('checkbox');
   let quantidade = document.getElementById('quantidade');
-  console.log(check = []);
+check = [];
+lista = [];
+
   let divplus = 0;
   function quantidadet() {
     // pega as sequências e transforma em número
+    if (check.length>0) {
     quantidade.innerHTML = `<div id="quantidades">${check.length}</div>`;
+
   }
+  }
+  
   function adicionar() {
     function checkbox() {
    divplus = divplus + 1;
@@ -45,10 +51,11 @@
  
 
       function DoneButton() {
-    // o push salvo no array como índice
+    // o push salva no array como índice
         let checkboxr = document.getElementById(`checkboxrr${divplus}`);
     let input = document.getElementById(`minhastarefas${divplus}`);
-    check.push(checkboxr)
+    check.push(checkboxr);
+    lista.push(input);
     if (checkboxr.checked == true) {
       input.classList.add('cor');
 }
@@ -58,9 +65,15 @@ DoneButton();
 }
 }
 checkbox();
+
 // .checked sempre retorna verdadeiro ou falso
 
 
 
+    }
+    function excluir() {
+      tarefas.innerHTML = ``;
+      quantidade.innerHTML = `<div id="quantidades">0</div>`;
+    
     }
 
