@@ -1,13 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 * {
     box-sizing:border-box;
     margin:0px;
     padding:0px;
+    font-family: 'Roboto', sans-serif;
 }
 body {
     background-color:black;
-}
-div.conteudo {
-    width:100%;
 }
 div#checkboxes {
    width:25%;
@@ -22,32 +21,21 @@ form {
     width:100%;
     height:100%;
 }
-div#quantidade {
-    width:100%;
-    color:black;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    
-    
-}
 div#quantidades {
-    width:10%;
+    width:100%;
     display:flex;
     justify-content:center;
     align-items:center;
+}
+div.quantidade {
+    width:5%;
     background-color:rgba(255, 244, 244, 0.528);
-    border-radius:5px;
-}
-input#checkbox {
-    position:absolute;
     display:flex;
+    justify-content:center;
     align-items:center;
-    top:16px;
-    left:0px;   
-    
+    margin-top:5px;
+    border-radius:10px;
 }
-
 input#nome {
     width:100%;
     height:50px;
@@ -67,7 +55,7 @@ div#tarefas {
     flex-direction:column;
     
 }
-div.minhastarefas {
+div.minhas-tarefas {
     background-color: rgba(255, 244, 244, 0.528);
     width:25%;
     height:52px;
@@ -79,13 +67,10 @@ div.minhastarefas {
     position:relative;
 
 }
-div.minhastarefasv {
-    background-color:red;
-}
 span {
-    margin-left:25px;
+    margin-left:20px;
 }
-input.checkboxr {
+input.checkbox {
     position:absolute;
     top:16px;
     left:0px;
@@ -100,14 +85,12 @@ div#botao {
 }
 button {
     height:40px;
-    width:10%;
+    width:5%;
     background-color:brown;
     border:none;
     border-radius:10px;
+    margin:5px;
 }
-label::before {
-    background-color:red;
-}
-input.checkboxr:checked label::before {
-    background-color:red;
+div.cor {
+    background-color: green;
 }

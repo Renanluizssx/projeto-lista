@@ -1,79 +1,66 @@
+// const usasse quando uma variável não vai receber novos valores
+let tarefas = document.getElementById('tarefas');
+let nome = document.getElementById('nome');
+let divquantidade = document.getElementById('quantidades');
+let divplus = 0;
+let apagar = 0;
+tarefasquan = [];
 
-  // let form = document.getElementsByClassName('form')[0];
-  // let checkboxes = document.createElement('div');
-  // checkboxes.classList.add('checkboxes');
-  // form.appendChild(checkboxes);
-  // let check = document.createElement('input');
-  // let checkat = document.createAttribute('type');
-  // checkat.value = "checkbox";
-  // check.setAttributeNode(checkat);
-  // checkboxes.appendChild(check);
-  // check.classList.add('checkbox');
-  // let nome = document.createElement('input');
-  // let nomeat = document.createAttribute('type');
-  // nomeat.value = "name";
-  // nome.classList.add('nome');
-  // nome.setAttributeNode(nomeat);
-  // nomeat = document.createAttribute('placeholder');
-  // nomeat.value = "Digite sua tarefa";
-  // nome.setAttributeNode(nomeat);
-  // checkboxes.appendChild(nome);
-  
-  let tarefas = document.getElementById('tarefas');
-  let nome = document.getElementById('nome');
-  let checkbox = document.getElementById('checkbox');
-  let quantidade = document.getElementById('quantidade');
-check = [];
-lista = [];
-
-  let divplus = 0;
-  function quantidadet() {
-    // pega as sequências e transforma em número
-    if (check.length>0) {
-    quantidade.innerHTML = `<div id="quantidades">${check.length}</div>`;
-
+// return pode ser usado somente uma vez dentro de uma função;
+  const quantidade = (c) => {
+        if (c == 0) {
+          return divquantidade.innerHTML = `<div class="quantidade">${c}</div>`
+        }
+        else {
+        return divquantidade.innerHTML = `<div class="quantidade">${tarefasquan.length}</div>`;
+      }
   }
+function ConcluirTarefa() {
+  const fundocheckbox = document.getElementById(`minhas-tarefas-${divplus}`)
+  const checkbox = document.getElementById(`checkbox-${divplus}`)
+  if (checkbox.checked) {
+    fundocheckbox.classList.add("cor");
+  }
+  else {
+    fundocheckbox.classList.remove("cor");
   }
   
-  function adicionar() {
-    function checkbox() {
-   divplus = divplus + 1;
-    if ( nome.value.length == 0) {
-      window.alert('Você precisa fazer digitar algo e checar para poder adicionar');
-    }
-    else {
-
-  tarefas.innerHTML = tarefas.innerHTML + `<div class="minhastarefas" id="minhastarefas${divplus}"> <span>${nome.value}</span>
- <label> <input class="checkboxr" class="mudarcor" id="checkboxrr${divplus}" type="checkbox"></label></div>` 
-  nome.value = "";   
-
-   
- 
-
-      function DoneButton() {
-    // o push salva no array como índice
-        let checkboxr = document.getElementById(`checkboxrr${divplus}`);
-    let input = document.getElementById(`minhastarefas${divplus}`);
-    check.push(checkboxr);
-    lista.push(input);
-    if (checkboxr.checked == true) {
-      input.classList.add('cor');
-}
 
 }
-DoneButton();
-}
-}
-checkbox();
-
-// .checked sempre retorna verdadeiro ou falso
-
-
-
-    }
-    function excluir() {
-      tarefas.innerHTML = ``;
-      quantidade.innerHTML = `<div id="quantidades">0</div>`;
+function AdicionarTarefa() {
+  
+  // boa prática não usar uma função dentro da outra
+  
+  if (nome.value == "") {
+    window.alert("Você precisa adicionar uma tarefa");
+    return null;
     
-    }
+    // a partir do momento que usamos um return, abaixo morre;
+  }
 
+  
+
+
+tarefa = `<div class="minhas-tarefas" id="minhas-tarefas-${divplus}">
+                <span>${nome.value}</span>
+                <input class="checkbox" onclick="ConcluirTarefa()" id="checkbox-${divplus}" type="checkbox">
+            </div>` 
+            tarefasquan.push(tarefa)
+tarefas.innerHTML += tarefa;
+
+nome.value = ""; 
+apagar++;
+divplus++; 
+}
+
+  const excluir = () =>  {
+    tarefas.innerHTML = ``;
+    divplus = 0;
+   tarefasquan.splice(0, apagar)
+    return quantidade(0)
+  }
+   /*
+localStorage.tarefas = localStorage.tarefas+check[controle];
+controle = controle + 1;
+tarefas.innerHTML = tarefas.innerHTML + localStorage.tarefas;
+*/

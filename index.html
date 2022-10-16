@@ -5,7 +5,10 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Lista</title>
+        <link rel="stylesheet" href="estilo/reset.css">
         <link rel="stylesheet" href="estilo/estilo.css">
+        
+
     </head>
     <body>
         <main>
@@ -15,8 +18,10 @@
                 <form id="form">
                     
                     <div id="checkboxes">
-                   
+                        
+                        
                         <input type="text" id="nome" placeholder="Digite sua tarefa"/>
+                   
                         
                         
                     
@@ -25,16 +30,16 @@
                 </form>
 
 
-                <div id="quantidade">
+                <div id="quantidades">
 
                 </div>
 
 
                 <div id="botao">
-                    
-                    <button id ="adicionar" onclick="adicionar()">Clique agora para adicionar </button>
-                    <button id ="quantidadet" onclick="quantidadet()">Gerar quantidade</button>
+                    <button id ="adicionar" onclick="AdicionarTarefa()">Clique agora para adicionar </button>
+                    <button id ="quantidadet" onclick="quantidade()">Gerar quantidade</button>
                     <button id="excluir" onclick="excluir()">Apagar tarefas</button>
+                    
                 
                 </div>  
                 
