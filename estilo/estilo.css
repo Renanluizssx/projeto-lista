@@ -5,6 +5,9 @@
     padding:0px;
     font-family: 'Roboto', sans-serif;
 }
+h1 {
+    color:yellow;
+}
 body {
     background-color:black;
 }
@@ -94,3 +97,7 @@ button {
 div.cor {
     background-color: green;
 }
+
+/*
+prioridade: tag > id > class
+*/
