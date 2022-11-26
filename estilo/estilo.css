@@ -97,7 +97,9 @@ button {
 div.cor {
     background-color: green;
 }
-
+#form #adicionar {
+    width:25%;
+}
 /*
 prioridade: tag > id > class
 */
