@@ -11,6 +11,7 @@
 //tentei usar o required e não funcionou
 // a partir do momento que colocou o event ele travou
 //localstorage não reconhece array
+document.addEventListener("DOMContentLoaded", pegartarefa)
 let formulario = document.getElementById("form");
 formulario.addEventListener("submit", AdicionarTarefa)
 let tarefas = document.getElementById('tarefas');
@@ -18,32 +19,42 @@ let nome = document.getElementById('nome');
 let divquantidade = document.getElementById('quantidades');
 let apagar = 0;
 let check = [];
-let banco = [];
+let getItem = (chave) => JSON.parse(localStorage.getItem(chave));
+
+let setItem = (chave, valor) =>
+  localStorage.setItem(chave, JSON.stringify(valor));
+let printartarefa = (valor) => {
+  controle = document.getElementsByClassName("minhas-tarefas").length + 1
+  if (valor == "") {
+     window.alert("Você precisa adicionar uma tarefa");
+    return null; 
+   }
+ divquantidade.innerHTML = ``;
+ apagar++;
+  let tarefa = 
+      `<div class="minhas-tarefas" id="minhas-tarefas-${controle}">
+      <span>${valor}</span>
+      <input class="checkbox" onclick="ConcluirTarefa(${controle})" id="checkbox-${controle}" type="checkbox">
+      </div>` 
+
+  // na primeira vez que ele pegar ele vai retornar null
+  //console.log(local);  
+    
+    check.push(tarefa)   
+    //valor = "";
+    tarefas.innerHTML +=tarefa
+
+}
 function AdicionarTarefa(event) {
   event.preventDefault()
-  controle = document.getElementsByClassName("minhas-tarefas").length + 1
- if (nome.value == "") {
-    window.alert("Você precisa adicionar uma tarefa");
-    return null;
-    
-    
+  printartarefa(nome.value)
+  local = getItem("local");
+  if (local === null) {
+    return setItem("local", [nome.value])
   }
-divquantidade.innerHTML = ``;
-apagar++;
-let tarefa = `<div class="minhas-tarefas" id="minhas-tarefas-${controle}">
-                <span>${nome.value}</span>
-                <input class="checkbox" onclick="ConcluirTarefa(${controle})" id="checkbox-${controle}" type="checkbox">
-            </div>` 
-// na primeira vez que ele pegar ele vai retornar null
-  //console.log(local);
-            
   
-  check.push(tarefa)
-            
+  return setItem("local", [...local, nome.value])
   
-            nome.value = "";
-tarefas.innerHTML +=tarefa
-
 
 }
   const quantidade = (c) => {
@@ -79,6 +90,18 @@ tarefas.innerHTML +=tarefa
     }
     
   
+  }
+  function pegartarefa () {
+
+    let localvalor = JSON.parse(localStorage.getItem("local"));
+    console.log(localvalor)
+    if (localvalor === null) {
+      return null
+    }
+    localvalor.forEach((tarefa) => {
+      printartarefa(tarefa);
+    });
+    
   }
 
 
