@@ -20,7 +20,6 @@ let divquantidade = document.getElementById('quantidades');
 let apagar = 0;
 let check = [];
 let getItem = (chave) => JSON.parse(localStorage.getItem(chave));
-
 let setItem = (chave, valor) =>
   localStorage.setItem(chave, JSON.stringify(valor));
 let printartarefa = (valor) => {
@@ -35,8 +34,10 @@ let printartarefa = (valor) => {
       `<div class="minhas-tarefas" id="minhas-tarefas-${controle}">
       <span>${valor}</span>
       <input class="checkbox" onclick="ConcluirTarefa(${controle})" id="checkbox-${controle}" type="checkbox">
+      <div id="divexcluir" class="divexcluir">
+      <button id="excluir" "class="excluir"></button>
+      </div>
       </div>` 
-
   // na primeira vez que ele pegar ele vai retornar null
   //console.log(local);  
     
@@ -93,12 +94,11 @@ function AdicionarTarefa(event) {
   }
   function pegartarefa () {
 
-    let localvalor = JSON.parse(localStorage.getItem("local"));
-    console.log(localvalor)
-    if (localvalor === null) {
+    let local = JSON.parse(localStorage.getItem("local"));
+    if (local === null) {
       return null
     }
-    localvalor.forEach((tarefa) => {
+    local.forEach((tarefa) => {
       printartarefa(tarefa);
     });
     

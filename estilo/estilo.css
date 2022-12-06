@@ -4,6 +4,8 @@
     margin:0px;
     padding:0px;
     font-family: 'Roboto', sans-serif;
+    list-style: none;
+    text-decoration: none;
 }
 h1 {
     color:yellow;
@@ -73,6 +75,7 @@ div.minhas-tarefas {
 }
 span {
     margin-left:20px;
+    width:100%;
 }
 input.checkbox {
     position:absolute;
