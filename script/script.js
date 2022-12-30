@@ -6,30 +6,29 @@ let tarefas = document.getElementById('tarefas');
 let getItem = (chave) => JSON.parse(localStorage.getItem(chave));
 let setItem = (chave, valor) => localStorage.setItem(chave, JSON.stringify(valor));
   
-let printarTarefa = (valor) => {
+let printarTarefa = (tarefa) => {
   
-  controle = document.getElementsByClassName("minhas-tarefas").length
+  index = document.getElementsByClassName("minhas-tarefas").length
   console.log(document.getElementsByClassName("minhas-tarefas"))
-  if (valor === "") {
+  if (tarefa === "") {
      window.alert("Você precisa adicionar uma tarefa");
     return null; 
    }
    
-  let tarefa = 
-      `<div class="minhas-tarefas" id="minhas-tarefas-${controle}">
-      <span>${valor}</span>
-      <input class="checkbox" onclick="ConcluirTarefa(${controle})" id="checkbox-${controle}" type="checkbox">
-      <img src="../imagens/trash.png" id="excluir" class="excluir" onclick="ExcluirTarefa(${controle})">
+  let tarefastring = 
+      `<div class="minhas-tarefas" id="minhas-tarefas-${index}">
+      <span>${tarefa}</span>
+      <input type="checkbox" class="checkbox" onclick="ConcluirTarefa(${index})" id="checkbox-${index}" >
+      <img src="../imagens/trash.png" id="excluir" class="excluir" onclick="ExcluirTarefa(${index})">
       </div>` 
     
-    tarefas.innerHTML +=tarefa;
+    tarefas.innerHTML +=tarefastring;
     
     
 }
-function adicionarTarefa(event) {
+function adicionarTarefa(evento) {
   
-  console.log(event)
-  event.preventDefault()
+  evento.preventDefault()
   let nome = document.getElementById('nome');
   
   printarTarefa(nome.value)
@@ -44,9 +43,9 @@ function adicionarTarefa(event) {
   return setItem("local", [...local, nome.value])
   
 }
-  function ConcluirTarefa(controle) {
-    const fundocheckbox = document.getElementById(`minhas-tarefas-${controle}`);
-    const checkbox = document.getElementById(`checkbox-${controle}`);
+  function ConcluirTarefa(index) {
+    const fundocheckbox = document.getElementById(`minhas-tarefas-${index}`);
+    const checkbox = document.getElementById(`checkbox-${index}`);
     const audio = new Audio('audio/Áudio.mp3')
     if (checkbox.checked) {
       fundocheckbox.classList.add("cor");

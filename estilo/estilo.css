@@ -13,7 +13,7 @@ h1 {
 body {
     background-color:black;
 }
-div#checkboxes {
+div.checkboxes {
    width:25%;
    margin: 0 auto;
    display:flex;
@@ -26,22 +26,7 @@ form {
     width:100%;
     height:100%;
 }
-div#quantidades {
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-div.quantidade {
-    width:5%;
-    background-color:rgba(255, 244, 244, 0.528);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin-top:5px;
-    border-radius:10px;
-}
-input#nome {
+input.nome {
     width:100%;
     height:50px;
     background-color:rgba(255, 244, 244, 0.528);
@@ -51,7 +36,7 @@ input#nome {
     font-size:15px;
 }
 
-div#tarefas {
+div.tarefas {
     width:100%;
     display:flex;
     justify-content:center;
@@ -83,7 +68,7 @@ input.checkbox {
     left:0px;
     cursor:pointer;
 }
-div#botao {
+div.botao {
     margin: auto;
     width:100%;
     display:flex;
@@ -102,7 +87,7 @@ button {
 div.cor {
     background-color: green;
 }
-#form #adicionar {
+.form .adicionar {
     width: 25%;
     height:40px;
     cursor:pointer;
