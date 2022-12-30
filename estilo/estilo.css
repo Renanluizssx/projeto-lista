@@ -81,6 +81,7 @@ input.checkbox {
     position:absolute;
     top:19px;
     left:0px;
+    cursor:pointer;
 }
 div#botao {
     margin: auto;
@@ -102,7 +103,14 @@ div.cor {
     background-color: green;
 }
 #form #adicionar {
-    width:25%;
+    width: 25%;
+    height:40px;
+    cursor:pointer;
+
+}
+.excluir {
+    cursor:pointer;
+    width:40px;
 }
 /*
 prioridade: tag > id > class

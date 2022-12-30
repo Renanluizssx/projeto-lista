@@ -4,12 +4,12 @@ formulario.addEventListener("submit", adicionarTarefa)
 let tarefas = document.getElementById('tarefas');
 
 let getItem = (chave) => JSON.parse(localStorage.getItem(chave));
-let setItem = (chave, valor) =>
-  localStorage.setItem(chave, JSON.stringify(valor));
+let setItem = (chave, valor) => localStorage.setItem(chave, JSON.stringify(valor));
   
 let printarTarefa = (valor) => {
   
-  controle = document.getElementsByClassName("minhas-tarefas").length + 1
+  controle = document.getElementsByClassName("minhas-tarefas").length
+  console.log(document.getElementsByClassName("minhas-tarefas"))
   if (valor === "") {
      window.alert("Você precisa adicionar uma tarefa");
     return null; 
@@ -19,6 +19,7 @@ let printarTarefa = (valor) => {
       `<div class="minhas-tarefas" id="minhas-tarefas-${controle}">
       <span>${valor}</span>
       <input class="checkbox" onclick="ConcluirTarefa(${controle})" id="checkbox-${controle}" type="checkbox">
+      <img src="../imagens/trash.png" id="excluir" class="excluir" onclick="ExcluirTarefa(${controle})">
       </div>` 
     
     tarefas.innerHTML +=tarefa;
@@ -61,15 +62,21 @@ function adicionarTarefa(event) {
   }
   function pegarTarefa () {
     
-    let local = JSON.parse(localStorage.getItem("local"));
+    let local = getItem("local");
     if (local === null) {
       return null
     }
-    local.forEach((tarefa) => {
-      printarTarefa(tarefa);
-    });
+    local.forEach((tarefa) => printarTarefa(tarefa));
 
   }
+  function ExcluirTarefa(excluir) {
+
+    local = getItem("local");
+    local.splice(excluir, 1);
+    setItem("local", local);
+    location.reload()
+  
+}
 
 
 
