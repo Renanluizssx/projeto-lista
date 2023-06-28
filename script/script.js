@@ -19,7 +19,7 @@ let printarTarefa = (tarefa) => {
       `<div class="minhas-tarefas" id="minhas-tarefas-${index}">
       <span>${tarefa}</span>
       <input type="checkbox" class="checkbox" onclick="ConcluirTarefa(${index})" id="checkbox-${index}" >
-      <img src="../imagens/trash.png" id="excluir" class="excluir" onclick="ExcluirTarefa(${index})">
+      <button id="excluir" class="excluir" onclick="ExcluirTarefa(${index})">Excluir</button>
       </div>` 
     
     tarefas.innerHTML +=tarefastring;
