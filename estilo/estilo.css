@@ -97,6 +97,36 @@ button {
     cursor:pointer;
     width:40px;
 }
+@media screen and (min-width:100px) and (max-width:435px) {
+    .checkboxes {
+        width:100%;
+    }
+  .tarefas {
+    width:100%;
+  }
+  .button {
+    width:100%;
+  }
+  .minhas-tarefas {
+    width:50%;
+  }
+
+}
+@media screen and (min-width:436px) and (max-width:900px) {
+    .checkboxes {
+        width:50%;
+    }
+  .tarefas {
+    width:100%;
+  }
+  .button {
+    width:100%;
+  }
+  .minhas-tarefas {
+    width:50%;
+  }
+
+}
 /*
 prioridade: tag > id > class
 */
