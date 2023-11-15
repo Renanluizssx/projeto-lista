@@ -1,131 +1,124 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 * {
-    box-sizing:border-box;
-    margin:0px;
-    padding:0px;
-    font-family: 'Roboto', sans-serif;
-    list-style: none;
-    text-decoration: none;
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Roboto", sans-serif;
+  list-style: none;
+  text-decoration: none;
 }
 h1 {
-    color:yellow;
+  color: yellow;
 }
 body {
-    background-color:black;
+  background-color: black;
 }
 .checkboxes {
-   width:25%;
-   margin: 0 auto;
-   display:flex;
-   flex-direction:row;
-   position:relative;
-   
-    
+  width: 25%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  position: relative;
 }
 form {
-    width:100%;
-    height:100%;
+  width: 100%;
+  height: 100%;
 }
 .nome {
-    width:100%;
-    height:50px;
-    background-color:rgba(255, 244, 244, 0.528);
-    border:none;
-    padding-left:25px;
-    border-radius:10px;
-    font-size:15px;
+  width: 100%;
+  height: 50px;
+  background-color: rgba(255, 244, 244, 0.528);
+  border: none;
+  padding-left: 25px;
+  border-radius: 10px;
+  font-size: 15px;
 }
 
 .tarefas {
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin-top:20px;
-    height:100%;
-    flex-direction:column;
-    
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  height: 100%;
+  flex-direction: column;
 }
 .minhas-tarefas {
-    background-color: rgba(255, 244, 244, 0.528);
-    width:25%;
-    height:52px;
-    display:flex;
-    justify-content:left;
-    align-items:center;
-    border-radius:10px;
-    margin:5px;
-    position:relative;
-
+  background-color: rgba(255, 244, 244, 0.528);
+  width: 25%;
+  height: 52px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-radius: 10px;
+  margin: 5px;
+  position: relative;
 }
 span {
-    margin-left:20px;
-    width:100%;
+  margin-left: 20px;
+  width: 100%;
 }
 .checkbox {
-    position:absolute;
-    top:19px;
-    left:0px;
-    cursor:pointer;
+  position: absolute;
+  top: 19px;
+  left: 0px;
+  cursor: pointer;
 }
 .botao {
-    margin: auto;
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    margin-top:10px;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 }
 button {
-    height:40px;
-    width:5%;
-    background-color:brown;
-    border:none;
-    border-radius:10px;
-    margin:5px;
+  height: 40px;
+  width: 5%;
+  background-color: brown;
+  border: none;
+  border-radius: 10px;
+  margin: 5px;
 }
 .cor {
-    background-color: green;
+  background-color: green;
 }
 .form .adicionar {
-    width: 25%;
-    height:40px;
-    cursor:pointer;
-
+  width: 25%;
+  height: 40px;
+  cursor: pointer;
 }
 .excluir {
-    cursor:pointer;
-    width:40px;
+  cursor: pointer;
+  width: 40px;
 }
-@media screen and (min-width:100px) and (max-width:435px) {
-    .checkboxes {
-        width:100%;
-    }
+@media screen and (min-width: 100px) and (max-width: 435px) {
+  .checkboxes {
+    width: 100%;
+  }
   .tarefas {
-    width:100%;
+    width: 100%;
   }
   .button {
-    width:100%;
+    width: 100%;
   }
   .minhas-tarefas {
-    width:50%;
+    width: 50%;
   }
-
 }
-@media screen and (min-width:436px) and (max-width:900px) {
-    .checkboxes {
-        width:50%;
-    }
+@media screen and (min-width: 436px) and (max-width: 900px) {
+  .checkboxes {
+    width: 50%;
+  }
   .tarefas {
-    width:100%;
+    width: 100%;
   }
   .button {
-    width:100%;
+    width: 100%;
   }
   .minhas-tarefas {
-    width:50%;
+    width: 50%;
   }
-
 }
 /*
 prioridade: tag > id > class
