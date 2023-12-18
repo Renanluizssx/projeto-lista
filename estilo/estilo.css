@@ -74,11 +74,12 @@ span {
 }
 button {
   height: 40px;
-  width: 5%;
   background-color: brown;
   border: none;
   border-radius: 10px;
   margin: 5px;
+  padding: 10px;
+  text-align: center;
 }
 .cor {
   background-color: green;
@@ -90,11 +91,10 @@ button {
 }
 .excluir {
   cursor: pointer;
-  width: 40px;
 }
 @media screen and (min-width: 100px) and (max-width: 435px) {
   .checkboxes {
-    width: 100%;
+    width: 50%;
   }
   .tarefas {
     width: 100%;
